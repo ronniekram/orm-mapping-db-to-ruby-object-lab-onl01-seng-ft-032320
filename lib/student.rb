@@ -74,9 +74,21 @@ class Student
   end 
   
   def self.students_below_12th_grade
+    sql = <<-SQL
+    SELECT COUNT(grade < 12) FROM students
+    SQL
+    
+    DB[:conn].execute(sql)
   end 
   
   def self.first_X_students_in_grade_10(number)
+    sql = <<-SQL
+      SELECT COUNT(number)
+      FROM students 
+      WHERE grade = 10
+      SQL
+      
+    DB[:conn].execute(sql, number)
   end
   
   def self._first_student_in_grade_10
