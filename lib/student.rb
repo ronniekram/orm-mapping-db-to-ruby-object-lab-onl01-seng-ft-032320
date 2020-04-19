@@ -86,7 +86,7 @@ class Student
       SELECT COUNT(?)
       FROM students 
       WHERE grade = 10
-      LIMIT number
+      LIMIT ?
       SQL
       
     DB[:conn].execute(sql)
