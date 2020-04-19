@@ -90,6 +90,7 @@ class Student
       
     DB[:conn].execute(sql)
   end
+  
     def self._first_student_in_grade_10
     sql = <<-SQL 
     SELECT * 
