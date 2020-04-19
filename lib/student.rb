@@ -35,7 +35,8 @@ class Student
     SQL
     
     DB[:conn].execute(sql, name).map do |row|
-    end 
+      
+    end.first 
   end
   
   def save
